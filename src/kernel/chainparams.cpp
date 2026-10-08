@@ -151,10 +151,12 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlock(1791462412, 574728, 0x1e0ffff0, 1, 50 * COIN);
+        const char* jarar_genesis_msg = "Jarar Coin 08/Oct/2026 - Jarar Records";
+        const CScript jarar_genesis_script = CScript() << "000000000000000000000000000000000000000000000000000000000000000000"_hex << OP_CHECKSIG;
+        genesis = CreateGenesisBlock(jarar_genesis_msg, jarar_genesis_script, 1791462412, 2222605, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256{"00000370e1a3c4661d65347932cef80203d5c97d3f71c3253f6c6107e06a8478"});
-        assert(genesis.hashMerkleRoot == uint256{"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"});
+        assert(consensus.hashGenesisBlock == uint256{"0000081984463497adf95993ed5e85ce1dee5356b46456fb941d1c036ff089b6"});
+        assert(genesis.hashMerkleRoot == uint256{"08824f0a05e53521488e517622c7d74ba506c3cdba8f7ef47db36406be853d90"});
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
