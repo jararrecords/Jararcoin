@@ -165,10 +165,10 @@ public:
         // release ASAP to avoid it where possible.
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,43);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,128);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
-        base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,58);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,171);
+        base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x4A, 0x7B, 0x1E};
+        base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x4A, 0x77, 0xE4};
 
         bech32_hrp = "jr";
         silent_payments_hrp = "jsp";
