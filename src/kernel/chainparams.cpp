@@ -179,8 +179,8 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
 
-        bech32_hrp = "bc";
-        silent_payments_hrp = "sp";
+        bech32_hrp = "jr";
+        silent_payments_hrp = "jsp";
 
         vFixedSeeds = std::vector<uint8_t>(std::begin(chainparams_seed_main), std::end(chainparams_seed_main));
 
@@ -412,8 +412,8 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        bech32_hrp = "tb";
-        silent_payments_hrp = "tsp";
+        bech32_hrp = "tj";
+        silent_payments_hrp = "tjsp";
 
 
         fDefaultConsistencyChecks = false;
@@ -672,8 +672,8 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        bech32_hrp = "bcrt";
-        silent_payments_hrp = "sprt";
+        bech32_hrp = "jrrt";
+        silent_payments_hrp = "jsprt";
 
         // Copied from Testnet4.
         m_headers_sync_params = HeadersSyncParams{
