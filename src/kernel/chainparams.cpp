@@ -361,7 +361,7 @@ public:
         consensus.CSVHeight = 1;
         consensus.SegwitHeight = 1;
         consensus.MinBIP9WarningHeight = 0;
-        consensus.powLimit = uint256{"00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"};
+        consensus.powLimit = uint256{"7fffff0000000000000000000000000000000000000000000000000000000000"};
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 10 * 60;
         consensus.fPowAllowMinDifficultyBlocks = true;
@@ -377,8 +377,8 @@ public:
 
         ApplyDeploymentOptions(opts.dep_opts);
 
-        consensus.nMinimumChainWork = uint256{"000000000000000000000000000000000000000000000e346a558455ade8eca9"};
-        consensus.defaultAssumeValid = uint256{"0000000021df65b91665a342e26ceb05e54826ad7d8fcd40316230058fa3b865"}; // 151604
+        consensus.nMinimumChainWork = uint256{};
+        consensus.defaultAssumeValid = uint256{}; // 151604
 
         pchMessageStart[0] = 0xb3;
         pchMessageStart[1] = 0x4a;
@@ -389,18 +389,18 @@ public:
         m_assumed_blockchain_size = 31;
         m_assumed_chain_state_size = 2;
 
-        const char* testnet4_genesis_msg = "03/May/2024 000000000000000000001ebd58c244970b3aa9d783bb001011fbe8ea8e98e00e";
+        const char* testnet4_genesis_msg = "Jarar Coin 08/Oct/2026 - Jarar Records";
         const CScript testnet4_genesis_script = CScript() << "000000000000000000000000000000000000000000000000000000000000000000"_hex << OP_CHECKSIG;
         genesis = CreateGenesisBlock(testnet4_genesis_msg,
                 testnet4_genesis_script,
-                1714777860,
-                393743547,
-                0x1d00ffff,
+                1791435000,
+                0,
+                0x207fffff,
                 1,
                 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256{"00000000da84f2bafbbc53dee25a72ae507ff4914b867c565be350b0da8bf043"});
-        assert(genesis.hashMerkleRoot == uint256{"7aa0a7ae1e223414cb807e40cd57e667b718e42aaf9306db9102fe28912b7b4e"});
+        assert(consensus.hashGenesisBlock == uint256{"21f47fbb79e659f7cadbcfdb82675e7ed0fd2e8d1eac959ac106244c9269ea44"});
+        assert(genesis.hashMerkleRoot == uint256{"08824f0a05e53521488e517622c7d74ba506c3cdba8f7ef47db36406be853d90"});
 
         vFixedSeeds.clear();
         vSeeds.clear();
